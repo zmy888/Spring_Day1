@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+
+    <properties resource="jdbc.properties"/>
+
+
+    <typeAliases>
+        <typeAlias type="com.baizhi.Entity.User" alias="User"/>
+        <typeAlias type="com.baizhi.Entity.Comment" alias="Comment"/>
+    </typeAliases>
+
+
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/baizhi/Mapper/userMapper.xml"></mapper>
+        <mapper resource="com/baizhi/Mapper/commentMapper.xml"></mapper>
+    </mappers>
+
+
+</configuration>
